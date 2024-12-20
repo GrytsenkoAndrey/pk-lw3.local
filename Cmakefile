@@ -1,0 +1,23 @@
+up:
+	docker-compose -f cd-compose.yml up -d
+
+down:
+	docker-compose -f cd-compose.yml down
+
+ps:
+	docker-compose -f cd-compose.yml ps
+
+app-bash:
+	docker exec -it pklw3-app bash
+
+mysql-bash:
+	docker exec -it pklw3-pgsql bash
+
+build:
+	docker-compose -f cd-compose.yml up -d --build
+
+recreate:
+	docker-compose -f cd-compose.yml up -d --build --force-recreate
+
+check-config:
+	docker-compose -f cd-compose.yml config
