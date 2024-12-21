@@ -21,13 +21,7 @@ class CreatePost extends Component
     public function save(): void
     {
         $this->validate();
-
-        Post::create([
-            'title' => $this->form->title,
-            'body' => $this->form->body,
-        ]);
-
+        $this->form->save();
         $this->success = true;
-        $this->reset(['form.title', 'form.body']);
     }
 }
