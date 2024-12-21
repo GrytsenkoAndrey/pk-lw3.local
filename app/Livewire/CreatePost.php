@@ -15,6 +15,8 @@ class CreatePost extends Component
     #[Validate('required|min:5')]
     public string $body = '';
 
+    public bool $success = false;
+
     public function render(): View
     {
         return view('livewire.create-post');
@@ -28,5 +30,8 @@ class CreatePost extends Component
             'title' => $this->title,
             'body' => $this->body,
         ]);
+
+        $this->success = true;
+        $this->reset(['title', 'body']);
     }
 }
