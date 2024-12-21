@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\View\View;
 use Livewire\Component;
 
 class CreatePost extends Component
@@ -10,8 +11,13 @@ class CreatePost extends Component
 
     public string $body = '';
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.create-post');
+    }
+
+    public function save(): void
+    {
+        dd('save');
     }
 }
